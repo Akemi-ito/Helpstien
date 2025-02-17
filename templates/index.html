@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpstein - Trouvez votre ville</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenue sur Helpstein</h1>
+    <h3>Choisissez vos critères :</h3>
+
+    <form action="/predict" method="post">
+        <label for="statut">Statut :</label>
+        <select name="statut" id="statut">
+            <option value="solo">Seul</option>
+            <option value="couple">En couple</option>
+        </select><br>
+
+        <label for="enfants">Nombre d'enfants :</label>
+        <select name="enfants" id="enfants">
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 et +</option>
+        </select><br>
+
+        <label for="revenu">Revenu du foyer (€) :</label>
+        <input type="number" name="revenu" id="revenu" min="1426,30" placeholder="Entrez votre revenu"><br>
+
+        <input type="submit" value="Trouver ma ville">
+
+
+    </form>
+    <h2>Rechercher une ville :</h2>
+        <form action="/search" method="POST">
+            <input type="text" name="query" placeholder="Entrez un mot-clé">
+            <button type="submit">Rechercher</button>
+        </form>
+
+</body>
+</html>

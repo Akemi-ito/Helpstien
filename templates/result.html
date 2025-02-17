@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat - Helpstein</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+        table {
+            margin: auto;
+            width: 80%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Résultat de votre recherche</h1>
+    <p>Voici les **10 villes** qui correspondent le mieux à vos critères :</p>
+
+    <table>
+        <tr>
+            <th>Ville</th>
+            <th>Coût de la Vie (€)</th>
+            <th>Qualité de Vie</th>
+            <th>Sécurité</th>
+            <th>Infrastructures</th>
+            <th>Description</th>
+        </tr>
+        {% for ville in villes %}
+        <tr>
+            <td>{{ ville["Ville"] }}</td>
+            <td>{{ ville["Coût de la Vie (€)"] }}</td>
+            <td>{{ ville["Qualité de Vie"] }}</td>
+            <td>{{ ville["Sécurité"] }}</td>
+            <td>{{ ville["Infrastructures"] }}</td>
+            <td>{{ ville["Description"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Retour à l'accueil</a>
+
+</body>
+</html>
